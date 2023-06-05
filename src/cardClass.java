@@ -4,6 +4,7 @@ import java.util.Map;
 
 public class cardClass {
 
+    
     final static Map<Integer, String> mapOfCardNumsToStrings;
     final static Map<Integer, String> mapOfSuitNumsToStrings;
 
@@ -11,7 +12,7 @@ public class cardClass {
         HashMap<Integer, String> tempMapOfCardNumsToStrings = new HashMap<>();
         HashMap<Integer, String> tempMapOfSuitNumsToStrings = new HashMap<>();
 
-        tempMapOfCardNumsToStrings.put(1, "1");
+        tempMapOfCardNumsToStrings.put(1, "A");
         tempMapOfCardNumsToStrings.put(2, "2");
         tempMapOfCardNumsToStrings.put(3, "3");
         tempMapOfCardNumsToStrings.put(4, "4");
@@ -21,9 +22,9 @@ public class cardClass {
         tempMapOfCardNumsToStrings.put(8, "8");
         tempMapOfCardNumsToStrings.put(9, "9");
         tempMapOfCardNumsToStrings.put(10, "10");
-        tempMapOfCardNumsToStrings.put(11, "Jack");
-        tempMapOfCardNumsToStrings.put(12, "Queen");
-        tempMapOfCardNumsToStrings.put(13, "King");
+        tempMapOfCardNumsToStrings.put(11, "J");
+        tempMapOfCardNumsToStrings.put(12, "Q");
+        tempMapOfCardNumsToStrings.put(13, "K");
 
         tempMapOfSuitNumsToStrings.put(1, "Clubs");
         tempMapOfSuitNumsToStrings.put(2, "Diamonds");
@@ -58,7 +59,36 @@ public class cardClass {
 
     @Override
     public String toString(){
-        return mapOfCardNumsToStrings.get(this.cardNumberEncoded) + " Of " + mapOfSuitNumsToStrings.get(this.cardSuitEncoded);
+
+        String cardNumForSwitch = mapOfCardNumsToStrings.get(this.cardNumberEncoded);
+        int lengthAsInt = cardNumForSwitch.length();
+
+        //Cant figure out switch statement at the moment so will use big else if block instead
+
+        if (lengthAsInt == 1 && this.cardSuitEncoded == 2){
+            //Each line of the cardForm String represents a line of the card
+
+            String cardForm =
+                    "|'''''''''|\n" +
+                    "|        " + cardNumForSwitch +  "|\n" +
+                    "|  \\---/  |\n" +
+                    "|   \\_/   |\n" +
+                    "|" + cardNumForSwitch + "        |\n" +
+                    "|.........|";
+            return cardForm;
+        }
+        else if (lengthAsInt == 2){
+
+            String cardForm =
+                    "|'''''''''|\n" +
+                    "|       " + cardNumForSwitch +  "|\n" +
+                    "|         |\n" +
+                    "|         |\n" +
+                    "|" + cardNumForSwitch + "       |\n" +
+                    "|.........|";
+            return cardForm;
+        }
+        return "Should not be getting to this return statement (invalid length of string)";
     }
 
 }
