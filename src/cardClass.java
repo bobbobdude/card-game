@@ -65,7 +65,23 @@ public class cardClass {
 
         //Cant figure out switch statement at the moment so will use big else if block instead
 
-        if (lengthAsInt == 1 && this.cardSuitEncoded == 2){
+        if (lengthAsInt == 1 && this.cardSuitEncoded == 1){
+
+            String cardForm =
+                    "|'''''''''|\n" +
+                    "|        " + cardNumForSwitch +  "|\n" +
+                    "|  /---\\  |\n" +
+                    "|  \\---/  |\n" +
+                    "|" + cardNumForSwitch + "        |\n" +
+                    "|.........|";
+
+            return cardForm;
+
+        }
+
+
+
+        else if (lengthAsInt == 1 && this.cardSuitEncoded == 2){
             //Each line of the cardForm String represents a line of the card
 
             String cardForm =
@@ -77,6 +93,31 @@ public class cardClass {
                     "|.........|";
             return cardForm;
         }
+
+        else if (lengthAsInt == 1 && this.cardSuitEncoded == 3) {
+
+            String cardForm =
+                    "|'''''''''|\n" +
+                    "|        " + cardNumForSwitch +  "|\n" +
+                    "|  /\\_/\\  |\n" +
+                    "|   \\_/   |\n" +
+                    "|" + cardNumForSwitch + "        |\n" +
+                    "|.........|";
+            return cardForm;
+        }
+
+        else if (lengthAsInt == 1 && this.cardSuitEncoded == 4) {
+
+            String cardForm =
+                    "|'''''''''|\n" +
+                    "|        " + cardNumForSwitch +  "|\n" +
+                    "|  /___\\  |\n" +
+                    "|   | |   |\n" +
+                    "|" + cardNumForSwitch + "        |\n" +
+                    "|.........|";
+            return cardForm;
+        }
+
         else if (lengthAsInt == 2){
 
             String cardForm =
