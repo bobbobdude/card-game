@@ -79,8 +79,6 @@ public class cardClass {
 
         }
 
-
-
         else if (lengthAsInt == 1 && this.cardSuitEncoded == 2){
             //Each line of the cardForm String represents a line of the card
 
@@ -118,18 +116,54 @@ public class cardClass {
             return cardForm;
         }
 
-        else if (lengthAsInt == 2){
+        else if (lengthAsInt == 2 && this.cardSuitEncoded == 1){
 
             String cardForm =
                     "|'''''''''|\n" +
                     "|       " + cardNumForSwitch +  "|\n" +
-                    "|         |\n" +
-                    "|         |\n" +
+                    "|  /---\\  |\n" +
+                    "|  \\---/  |\n" +
                     "|" + cardNumForSwitch + "       |\n" +
                     "|.........|";
             return cardForm;
         }
-        return "Should not be getting to this return statement (invalid length of string)";
+
+        else if (lengthAsInt == 2 && this.cardSuitEncoded == 2){
+
+            String cardForm =
+                    "|'''''''''|\n" +
+                    "|       " + cardNumForSwitch +  "|\n" +
+                    "|  \\---/  |\n" +
+                    "|   \\_/   |\n" +
+                    "|" + cardNumForSwitch + "       |\n" +
+                    "|.........|";
+            return cardForm;
+        }
+
+        else if (lengthAsInt == 2 && this.cardSuitEncoded == 3){
+
+            String cardForm =
+                    "|'''''''''|\n" +
+                    "|       " + cardNumForSwitch +  "|\n" +
+                    "|  /\\_/\\  |\n" +
+                    "|   \\_/   |\n" +
+                    "|" + cardNumForSwitch + "       |\n" +
+                    "|.........|";
+            return cardForm;
+        }
+
+        else if (lengthAsInt == 2 && this.cardSuitEncoded == 4){
+
+            String cardForm =
+                    "|'''''''''|\n" +
+                    "|       " + cardNumForSwitch +  "|\n" +
+                    "|  /___\\  |\n" +
+                    "|   | |   |\n" +
+                    "|" + cardNumForSwitch + "       |\n" +
+                    "|.........|";
+            return cardForm;
+        }
+        return "Should not be getting to this return statement (invalid length of string or not catching all combos of cards and suits)";
     }
 
 }
