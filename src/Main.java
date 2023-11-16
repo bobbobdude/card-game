@@ -16,6 +16,7 @@ public class Main {
         }
 
         for (cardClass cards : deckOfCards){
+            System.out.println();
             System.out.println(cards.toString());
         }
 
